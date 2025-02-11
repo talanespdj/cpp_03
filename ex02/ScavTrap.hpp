@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 22:21:56 by tespandj          #+#    #+#             */
-/*   Updated: 2025/02/10 23:00:25 by tespandj         ###   ########.fr       */
+/*   Updated: 2025/02/11 01:22:45 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class	ClapTrap {
-	private: 
-		std::string	name;
-		int		HP;
-		int		EP;
-		int		AD;
-
+class	ScavTrap : public ClapTrap 
+{
 	public:
-		ClapTrap(std::string init);
-		ClapTrap();
-		~ClapTrap();
-		ClapTrap(const ClapTrap& f);
-		ClapTrap& operator=(const ClapTrap& f);
+		ScavTrap(std::string init);
+		~ScavTrap();
+		ScavTrap(const ScavTrap& f);
 
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-
-		void	setName(std::string data);
-		void	setHP(int data);
-		void	setEP(int data);
-		void	setAD(int data);
-		
-		std::string	getName();
-		int	getHP();
-		int	getEP();
-		int	getAD();
+		void	guardGate();
 };
 
 #endif
