@@ -13,11 +13,11 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap() {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap Default constructor called" << std::endl;
 };
 
-ScavTrap::~ScavTrap() : ClapTrap() {
+ScavTrap::~ScavTrap() {
 	std::cout << "Deconstructor called" << std::endl;
 };
 
@@ -42,11 +42,11 @@ void	ScavTrap::attack(const std::string& target) {
 		std::cout << name << " cannot attack anyone, no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << getName() << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << name << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount) {
-	std::cout << "ScavTrap " << getName() << " lost " << amount << " Hit points." << std::endl;
+	std::cout << "ScavTrap " << name << " lost " << amount << " Hit points." << std::endl;
 	this->HP -= amount;
 }
 
@@ -55,38 +55,38 @@ void	ScavTrap::beRepaired(unsigned int amount) {
 		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << getName() << " repairs itself and gain one HP." << std::endl;
+	std::cout << "ScavTrap " << name << " repairs itself and gain one HP." << std::endl;
 	this->HP += amount;
 }
 
 void	ScavTrap::guardGate() {
-	
+	std::cout << "Scavtrap " << name << " is now in Gate keeper mode" << std::endl;
 }
 
-int	ScavTrap::getHP() {
-	return (this->HP);
-}
+// int	ScavTrap::getHP() {
+// 	return (this->HP);
+// }
 
-int	ScavTrap::getEP() {
-	return (this->EP);
-}
+// int	ScavTrap::getEP() {
+// 	return (this->EP);
+// }
 
-int	ScavTrap::getAD() {
-	return (this->AD);
-}
+// int	ScavTrap::getAD() {
+// 	return (this->AD);
+// }
 
-void	ScavTrap::setHP(int data) {
-	this->HP = data;
-}
+// void	ScavTrap::setHP(int data) {
+// 	this->HP = data;
+// }
 
-void	ScavTrap::setEP(int data) {
-	this->EP = data;	
-}
+// void	ScavTrap::setEP(int data) {
+// 	this->EP = data;	
+// }
 
-void	ScavTrap::setAD(int data) {
-	this->AD = data;	
-}
+// void	ScavTrap::setAD(int data) {
+// 	this->AD = data;	
+// }
 
-std::string	ScavTrap::getName() {
-	return (this->name);
-}
+// std::string	ScavTrap::name {
+// 	return (this->name);
+// }

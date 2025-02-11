@@ -17,6 +17,8 @@
 
 class	ScavTrap : public ClapTrap 
 {
+	// using 	ClapTrap::ClapTrap;
+
 	private: 
 		std::string	name;
 		int		HP;
@@ -24,7 +26,7 @@ class	ScavTrap : public ClapTrap
 		int		AD;
 
 	public:
-		ScavTrap();
+		ScavTrap(std::string init);
 		~ScavTrap();
 		ScavTrap(const ScavTrap& f);
 		ScavTrap& operator=(const ScavTrap& f);
@@ -34,16 +36,6 @@ class	ScavTrap : public ClapTrap
 		void	beRepaired(unsigned int amount);
 
 		void	guardGate();
-
-		void	setHP(int data);
-		void	setEP(int data);
-		void	setAD(int data);
-
-		int	getHP();
-		int	getEP();
-		int	getAD();
-
-		std::string	getName();
 };
 
 #endif

@@ -12,6 +12,10 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ClapTrap::ClapTrap() {
+	std::cout << "Default constructor called no parameters" << std::endl;
+};
+
 ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
 	std::cout << "Default constructor called" << std::endl;
 };
@@ -41,11 +45,11 @@ void	ClapTrap::attack(const std::string& target) {
 		std::cout << name << " cannot attack anyone, no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << getName() << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	std::cout << "ClapTrap " << getName() << " lost " << amount << " Hit points." << std::endl;
+	std::cout << "ClapTrap " << name << " lost " << amount << " Hit points." << std::endl;
 	this->HP -= amount;
 }
 
@@ -54,12 +58,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << getName() << " repairs itself and gain one HP." << std::endl;
+	std::cout << "ClapTrap " << name << " repairs itself and gain one HP." << std::endl;
 	this->HP += amount;
-}
-
-std::string	ClapTrap::getName() {
-	return (this->name);
 }
 
 int	ClapTrap::getHP() {

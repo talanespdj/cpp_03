@@ -23,6 +23,7 @@ class	ClapTrap {
 
 	public:
 		ClapTrap(std::string init);
+		ClapTrap();
 		~ClapTrap();
 		ClapTrap(const ClapTrap& f);
 		ClapTrap& operator=(const ClapTrap& f);
@@ -38,8 +39,6 @@ class	ClapTrap {
 		int	getHP();
 		int	getEP();
 		int	getAD();
-
-		std::string	getName();
 };
 
 #endif

@@ -17,7 +17,7 @@ int	main(void)
 	ClapTrap	A("Talan");
 	ClapTrap	B("Khalid");
 	
-	A.attack(B.getName());
+	A.attack("Khalid");
 	A.takeDamage(5);
 	A.beRepaired(4);
 	return (0);
