@@ -15,7 +15,7 @@
 # include <iostream>
 
 class	ClapTrap {
-	private: 
+	protected: 
 		std::string	name;
 		int		HP;
 		int		EP;
@@ -32,10 +32,12 @@ class	ClapTrap {
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
+		void	setName(std::string data);
 		void	setHP(int data);
 		void	setEP(int data);
 		void	setAD(int data);
-
+		
+		std::string	getName();
 		int	getHP();
 		int	getEP();
 		int	getAD();

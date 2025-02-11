@@ -17,24 +17,12 @@
 
 class	ScavTrap : public ClapTrap 
 {
-	// using 	ClapTrap::ClapTrap;
-
-	private: 
-		std::string	name;
-		int		HP;
-		int		EP;
-		int		AD;
-
 	public:
 		ScavTrap(std::string init);
 		~ScavTrap();
 		ScavTrap(const ScavTrap& f);
-		ScavTrap& operator=(const ScavTrap& f);
 
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-
 		void	guardGate();
 };
 

@@ -14,7 +14,11 @@
 #include <iostream>
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	this->setName(name);
+	this->setHP(100);
+	this->setEP(50);
+	this->setAD(20);
+	std::cout << "A Scavtrap was made, welcome " << getName() << " as you should." << std::endl;
 };
 
 ScavTrap::~ScavTrap() {
@@ -26,17 +30,6 @@ ScavTrap::ScavTrap(const ScavTrap& f) {
 	*this = f;
 }
 
-ScavTrap&	ScavTrap::operator=(const ScavTrap& f) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &f) {
-		this->name = f.name;
-		this->HP = f.HP;
-		this->EP = f.EP;
-		this->AD = f.AD;
-	}
-	return (*this);
-}
-
 void	ScavTrap::attack(const std::string& target) {
 	if (!getHP() || !getEP()) {
 		std::cout << name << " cannot attack anyone, no HP/EP left." << std::endl;
@@ -45,48 +38,6 @@ void	ScavTrap::attack(const std::string& target) {
 	std::cout << "ScavTrap " << name << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount) {
-	std::cout << "ScavTrap " << name << " lost " << amount << " Hit points." << std::endl;
-	this->HP -= amount;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount) {
-	if (!getHP() || !getEP()) {
-		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
-		return ;
-	}
-	std::cout << "ScavTrap " << name << " repairs itself and gain one HP." << std::endl;
-	this->HP += amount;
-}
-
 void	ScavTrap::guardGate() {
 	std::cout << "Scavtrap " << name << " is now in Gate keeper mode" << std::endl;
 }
-
-// int	ScavTrap::getHP() {
-// 	return (this->HP);
-// }
-
-// int	ScavTrap::getEP() {
-// 	return (this->EP);
-// }
-
-// int	ScavTrap::getAD() {
-// 	return (this->AD);
-// }
-
-// void	ScavTrap::setHP(int data) {
-// 	this->HP = data;
-// }
-
-// void	ScavTrap::setEP(int data) {
-// 	this->EP = data;	
-// }
-
-// void	ScavTrap::setAD(int data) {
-// 	this->AD = data;	
-// }
-
-// std::string	ScavTrap::name {
-// 	return (this->name);
-// }

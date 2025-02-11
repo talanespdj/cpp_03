@@ -46,11 +46,18 @@ void	ClapTrap::attack(const std::string& target) {
 		return ;
 	}
 	std::cout << "ClapTrap " << name << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
+	this->EP--;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
+	if (getHP() <= 0) {
+		std::cout << "Don't fight dead people mate." << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap " << name << " lost " << amount << " Hit points." << std::endl;
 	this->HP -= amount;
+	if (getHP() <= 0)
+		std::cout << "ClapTrap " << name << " died of excruciating pain." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
@@ -62,16 +69,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	this->HP += amount;
 }
 
-int	ClapTrap::getHP() {
-	return (this->HP);
-}
-
-int	ClapTrap::getEP() {
-	return (this->EP);
-}
-
-int	ClapTrap::getAD() {
-	return (this->AD);
+void	ClapTrap::setName(std::string data) {
+	this->name = data;
 }
 
 void	ClapTrap::setHP(int data) {
@@ -84,4 +83,20 @@ void	ClapTrap::setEP(int data) {
 
 void	ClapTrap::setAD(int data) {
 	this->AD = data;	
+}
+
+std::string	ClapTrap::getName() {
+	return (this->name);
+}
+
+int	ClapTrap::getHP() {
+	return (this->HP);
+}
+
+int	ClapTrap::getEP() {
+	return (this->EP);
+}
+
+int	ClapTrap::getAD() {
+	return (this->AD);
 }
