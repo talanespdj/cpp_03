@@ -12,10 +12,10 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main()
+int	main(void)
 {
 	ClapTrap	Talan("Talan");
-	ClapTrap	*Diafarou = new ClapTrap("Roméo");
+	ClapTrap	Diafarou("Diafarou");
 	ScavTrap	Khalid("Khalid");
 
 	Talan.attack("Khalid");
@@ -23,8 +23,7 @@ int	main()
 	Khalid.takeDamage(Talan.getAD());
 	Khalid.beRepaired(18);
 	Khalid.guardGate();
-	Khalid.attack(Diafarou->getName());
-	Diafarou->takeDamage(Khalid.getAD());
-	delete Diafarou;
+	Khalid.attack(Diafarou.getName());
+	Diafarou.takeDamage(Khalid.getAD());
 	return 0;
 }

@@ -17,11 +17,11 @@ ClapTrap::ClapTrap() {
 };
 
 ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << getName() << " Constructor called" << std::endl;
 };
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << getName() << " Claptrapcalled" << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap& f) {

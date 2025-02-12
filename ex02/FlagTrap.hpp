@@ -9,6 +9,7 @@ class	 FlagTrap : public ClapTrap
 
 	public:
 		FlagTrap();
+		FlagTrap(std::string name);
 		~FlagTrap();
 		FlagTrap(const FlagTrap& f);
 		FlagTrap& operator=(const FlagTrap& f);

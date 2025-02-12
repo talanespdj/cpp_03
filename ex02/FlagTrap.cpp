@@ -1,8 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FlagTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/11 23:43:13 by tespandj          #+#    #+#             */
+/*   Updated: 2025/02/11 23:43:15 by tespandj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "FlagTrap.hpp"
 
-FlagTrap::FlagTrap() : ClapTrap("", 100, 100, 30) {
-	std::cout << "FlagTrap constructor called" << std::endl;
+FlagTrap::FlagTrap(std::string name) : ClapTrap(name) {
+	this->setName(name);
+	this->setHP(100);
+	this->setEP(50);
+	this->setAD(20);
 };
+
+FlagTrap::FlagTrap() : ClapTrap("") {
+	this->setHP(100);
+	this->setEP(50);
+	this->setAD(20);
+}
+
 
 FlagTrap::~FlagTrap() {
 	std::cout << "FlagTrap Deconstructor called" << std::endl;

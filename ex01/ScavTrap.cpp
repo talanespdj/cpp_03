@@ -22,11 +22,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 };
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "Scavtrap destroyed" << std::endl;
 };
 
 ScavTrap::ScavTrap(const ScavTrap& f) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << getName() << " Copy constructor called" << std::endl;
 	*this = f;
 }
 
