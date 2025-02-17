@@ -13,6 +13,10 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ScavTrap::ScavTrap() {
+	std::cout << "An anonymous Scavtrap was made, welcome" << std::endl;
+};
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	this->setName(name);
 	this->setHP(100);
@@ -22,11 +26,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 };
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "Scavtrap destroyed, bye bye " << getName() << std::endl;
 };
 
 ScavTrap::ScavTrap(const ScavTrap& f) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << getName() << " Copy constructor called" << std::endl;
 	*this = f;
 }
 

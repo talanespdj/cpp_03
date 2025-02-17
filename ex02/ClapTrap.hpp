@@ -23,7 +23,7 @@ class	ClapTrap {
 
 	public:
 		ClapTrap(std::string init);
-		ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad);
+		// ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad);
 		ClapTrap();
 		~ClapTrap();
 		ClapTrap(const ClapTrap& f);

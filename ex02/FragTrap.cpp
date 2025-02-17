@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,33 +9,35 @@
 /*   Updated: 2025/02/11 23:43:15 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-FlagTrap::FlagTrap(std::string name) : ClapTrap(name) {
-	this->setName(name);
+FragTrap::FragTrap() : ClapTrap() {
 	this->setHP(100);
-	this->setEP(50);
-	this->setAD(20);
-};
-
-FlagTrap::FlagTrap() : ClapTrap("") {
-	this->setHP(100);
-	this->setEP(50);
-	this->setAD(20);
+	this->setEP(100);
+	this->setAD(30);
+	std::cout << "A FragTrap was made, wassup" << getName() << std::endl;
 }
 
-
-FlagTrap::~FlagTrap() {
-	std::cout << "FlagTrap Deconstructor called" << std::endl;
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	this->setName(name);
+	this->setHP(100);
+	this->setEP(100);
+	this->setAD(30);
+	std::cout << "A FragTrap was made from Claptrap " << getName() << std::endl;
 };
 
-FlagTrap::FlagTrap(const FlagTrap& f) {
-	std::cout << "FlagTrap Copy constructor called" << std::endl;
+FragTrap::~FragTrap() {
+	std::cout << "FragTrap destroyed, bye bye " << getName() << std::endl;
+};
+
+FragTrap::FragTrap(const FragTrap& f) {
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = f;
 }
 
-FlagTrap&	FlagTrap::operator=(const FlagTrap& f) {
-	std::cout << "FlagTrap Copy assignment operator called" << std::endl;
+FragTrap&	FragTrap::operator=(const FragTrap& f) {
+	std::cout << "FragTrap Copy assignment operator called" << std::endl;
 	if (this != &f) {
 		this->name = f.name;
 		this->HP = f.HP;
@@ -45,6 +47,6 @@ FlagTrap&	FlagTrap::operator=(const FlagTrap& f) {
 	return (*this);
 }
 
-void	FlagTrap::highFivesGuys(void) {
-	std::cout << "Flagtrap " << getName() << " is asking for an high five !" << std::endl;
+void	FragTrap::highFivesGuys() {
+	std::cout << "FragTrap " << getName() << ": Gimme a high five - CLAP - That's what im talking about" << std::endl;
 }

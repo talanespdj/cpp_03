@@ -13,28 +13,24 @@
 #include <iostream>
 
 ClapTrap::ClapTrap() {
-	std::cout << "Default constructor called no parameters" << std::endl;
+	std::cout << "ClapTrap Default constructor called no parameters" << std::endl;
 };
 
 ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
-	std::cout << "Default constructor called initialization list" << std::endl;
+	std::cout << "A ClapTrap was made, hi there " << getName() << std::endl;
 };
 
-ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad) : name(name), HP(_hp), EP(_ep), AD(_ad) {
-	std::cout << "Constructor called with parameters" << std::endl;
-}
-
 ClapTrap::~ClapTrap() {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "ClapTrap destroyed, bye bye " << getName() << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap& f) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = f;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& f) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	if (this != &f) {
 		this->name = f.name;
 		this->HP = f.HP;
@@ -69,7 +65,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << name << " repairs itself and gain one HP." << std::endl;
+	std::cout << "ClapTrap " << name << " repairs itself and gain " << amount << " HP." << std::endl;
 	this->HP += amount;
 }
 

@@ -5,7 +5,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS = main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \
-	FlagTrap.cpp \
+	FragTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o) 
 
@@ -16,7 +16,7 @@ all: $(NAME)
         
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
-	@echo "\033[1mFlagTrap from ClavTrap built\033[0m"
+	@echo "\033[1mFragTrap from ClavTrap built\033[0m"
 
 clean:
 	@rm -rf $(OBJS)
