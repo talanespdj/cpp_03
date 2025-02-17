@@ -17,11 +17,11 @@ ClapTrap::ClapTrap() {
 };
 
 ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "A Claptrap was made, hi there " << getName() << std::endl;
 };
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "Claptrap destroyed, bye bye " << getName() << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap& f) {
@@ -65,7 +65,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << name << " repairs itself and gain one HP." << std::endl;
+	std::cout << "ClapTrap " << name << " repairs itself and gain " << amount << " HP." << std::endl;
 	this->HP += amount;
 }
 

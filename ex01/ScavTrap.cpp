@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 };
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Scavtrap destroyed" << std::endl;
+	std::cout << "Scavtrap destroyed, bye bye " << getName() << std::endl;
 };
 
 ScavTrap::ScavTrap(const ScavTrap& f) {

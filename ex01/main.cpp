@@ -19,7 +19,6 @@ int	main(void)
 	ScavTrap	Khalid("Khalid");
 
 	Talan.attack("Khalid");
-	std::cout << Khalid.getAD() << " montre moi ta montre qui me montre que ta montre montre l'heure" << std::endl;
 	Khalid.takeDamage(Talan.getAD());
 	Khalid.beRepaired(18);
 	Khalid.guardGate();
