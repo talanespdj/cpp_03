@@ -20,6 +20,10 @@ ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
 	std::cout << "A ClapTrap was made, hi there " << getName() << std::endl;
 };
 
+// ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad) : name(name), HP(_hp), EP(_ep), AD(_ad) {
+// 	std::cout << "Constructor called with parameters" << std::endl;
+// }
+
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap destroyed, bye bye " << getName() << std::endl;
 };

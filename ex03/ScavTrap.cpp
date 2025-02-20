@@ -34,6 +34,17 @@ ScavTrap::ScavTrap(const ScavTrap& f) {
 	*this = f;
 }
 
+ScavTrap&	ScavTrap::operator=(const ScavTrap& f) {
+	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
+	if (this != &f) {
+		this->name = f.name;
+		this->HP = f.HP;
+		this->EP = f.EP;
+		this->AD = f.AD;
+	}
+	return (*this);
+}
+
 void	ScavTrap::attack(const std::string& target) {
 	if (!getHP() || !getEP()) {
 		std::cout << name << " cannot attack anyone, no HP/EP left." << std::endl;

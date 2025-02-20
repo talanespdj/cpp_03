@@ -12,6 +12,8 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
+# include <iostream>
+
 class	ClapTrap {
 	protected: 
 		std::string	name;
@@ -20,8 +22,9 @@ class	ClapTrap {
 		int		AD;
 
 	public:
-		ClapTrap(std::string init);
 		ClapTrap();
+		ClapTrap(std::string init);
+		// ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad);
 		~ClapTrap();
 		ClapTrap(const ClapTrap& f);
 		ClapTrap& operator=(const ClapTrap& f);
