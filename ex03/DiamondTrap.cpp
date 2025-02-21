@@ -16,17 +16,18 @@
 DiamondTrap::DiamondTrap() : ClapTrap(),  FragTrap(), ScavTrap() {
 	std::cout << "A DiamondTrap was made, Mbote " << getName() << std::endl;
 	this->name = ("Namonymous");
-	this->HP = FragTrap::getHP();
-	this->EP = ScavTrap::getEP();
-	this->AD = FragTrap::getAD();
+	this->HP = FragTrap::HP;
+	this->EP = ScavTrap::EP;
+	this->AD = FragTrap::AD;
 };
 
 DiamondTrap::DiamondTrap(std::string name) : FragTrap(name + "clap_name"), ScavTrap(name + "clap_name") {
 	std::cout << "A DiamondTrap was made, Mbote " << getName() << std::endl;
 	this->name = name;
-	this->HP = FragTrap::getHP();
-	this->EP = ScavTrap::getEP();
-	this->AD = FragTrap::getAD();
+	this->HP = FragTrap::HP;
+	this->EP = ScavTrap::EP;
+	this->AD = FragTrap::AD;
+	std::cout << this->HP << ":" << this->EP << ":" << this->AD << std::endl;
 };
 
 DiamondTrap::~DiamondTrap() {
@@ -50,5 +51,5 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& f) {
 }
 
 void	DiamondTrap::whoAmI() {
-	std::cout << "My DiamondTrap name is " << this->name << ". However my ClapTrap name is " << ClapTrap::getName() << "." << std::endl;
+	std::cout << "My DiamondTrap name is " << this->name << ". However my ClapTrap name is " << ClapTrap::name << "." << std::endl;
 }
