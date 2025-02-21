@@ -15,35 +15,31 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-int	main()
+int	main(void)
 {
-	// DiamondTrap	talan;
-
-	// talan.whoAmI();
-	// return (0);
 	FragTrap	a;
-	DiamondTrap	b("Morgan");
-	ClapTrap	c("Hugues");
-	ScavTrap	d("Ben");
+	DiamondTrap	b("Theo");
+	ClapTrap	c("Khalid");
+	ScavTrap	d("Ines");
 
-	// std::cout << c << std::endl;
-	// std::cout << d << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
+	std::cout << c.getName() << std::endl;
+	std::cout << d.getName() << std::endl;
+	std::cout << a.getName() << std::endl;
+	std::cout << b.getName() << std::endl;
 	b.whoAmI();
 	std::cout << "===" << std::endl;
 	b.takeDamage(3);
-	// std::cout << b << std::endl;
+	std::cout << b.getName() << std::endl;
 	b.takeDamage(20);
-	// std::cout << b << std::endl;
+	std::cout << b.getName() << std::endl;
 	b.beRepaired(3);
-	// std::cout << b << std::endl;
-	b.attack("Eric");
-	b.attack("Eric");
-	// std::cout << b << std::endl;
-	b.attack("Eric");
-	// std::cout << b << std::endl;
+	std::cout << b.getName() << std::endl;
+	b.attack("Diafarou");
+	b.attack("Diafarou");
+	std::cout << b.getName() << std::endl;
+	b.attack("Diafarou");
+	std::cout << b.getName() << std::endl;
 	b.beRepaired(100);
-	// std::cout << b << std::endl;
-	b.attack("Eric");
+	std::cout << b.getName() << std::endl;
+	b.attack("Diafarou");
 }

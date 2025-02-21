@@ -13,6 +13,13 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ScavTrap::ScavTrap() : ClapTrap() {
+	this->setHP(100);
+	this->setEP(50);
+	this->setAD(20);
+	std::cout << "A no name Scavtrap was made, welcome him as you should." << std::endl;
+};
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	this->setName(name);
 	this->setHP(100);
@@ -24,6 +31,17 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 ScavTrap::~ScavTrap() {
 	std::cout << "Scavtrap destroyed, bye bye " << getName() << std::endl;
 };
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap& f) {
+	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
+	if (this != &f) {
+		this->name = f.name;
+		this->HP = f.HP;
+		this->EP = f.EP;
+		this->AD = f.AD;
+	}
+	return (*this);
+}
 
 ScavTrap::ScavTrap(const ScavTrap& f) {
 	std::cout << getName() << " Copy constructor called" << std::endl;

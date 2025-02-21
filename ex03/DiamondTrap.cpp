@@ -13,14 +13,15 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("clap_name") ,  FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap(),  FragTrap(), ScavTrap() {
 	std::cout << "A DiamondTrap was made, Mbote " << getName() << std::endl;
+	this->name = ("Namonymous");
 	this->HP = FragTrap::getHP();
 	this->EP = ScavTrap::getEP();
 	this->AD = FragTrap::getAD();
 };
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap(std::string name) : FragTrap(name + "clap_name"), ScavTrap(name + "clap_name") {
 	std::cout << "A DiamondTrap was made, Mbote " << getName() << std::endl;
 	this->name = name;
 	this->HP = FragTrap::getHP();

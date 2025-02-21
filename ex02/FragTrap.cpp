@@ -16,7 +16,7 @@ FragTrap::FragTrap() : ClapTrap() {
 	this->setHP(100);
 	this->setEP(100);
 	this->setAD(30);
-	std::cout << "A FragTrap was made, wassup" << getName() << std::endl;
+	std::cout << "A FragTrap was made, wassup " << getName() << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {

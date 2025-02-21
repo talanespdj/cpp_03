@@ -12,17 +12,13 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() {
-	std::cout << "ClapTrap Default constructor called no parameters" << std::endl;
+ClapTrap::ClapTrap() : name("Anonymous"), HP(10), EP(10), AD(0)  {
+	std::cout << "A ClapTrap was made, hi there " << getName() << std::endl;
 };
 
 ClapTrap::ClapTrap(std::string init) : name(init), HP(10), EP(10), AD(0) {
 	std::cout << "A ClapTrap was made, hi there " << getName() << std::endl;
 };
-
-// ClapTrap::ClapTrap(std::string name, unsigned int _hp, unsigned int _ep, unsigned int _ad) : name(name), HP(_hp), EP(_ep), AD(_ad) {
-// 	std::cout << "Constructor called with parameters" << std::endl;
-// }
 
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap destroyed, bye bye " << getName() << std::endl;
@@ -46,7 +42,10 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& f) {
 
 void	ClapTrap::attack(const std::string& target) {
 	if (!getHP() || !getEP()) {
-		std::cout << name << " cannot attack anyone, no HP/EP left." << std::endl;
+		if (!getHP())
+			std::cout << "Dead people cannot attack somebody (" << getName() << ")" << std::endl;
+		if (!getEP())
+			std::cout << name << " cannot attack anyone, no EP left." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << name << " attacks " << target << " causing " << getAD() << " points of damage!" << std::endl;
@@ -66,11 +65,15 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (!getHP() || !getEP()) {
-		std::cout << name << " cannot repair itself , no HP/EP left." << std::endl;
+		if (!getHP())
+			std::cout << "Resurrection isn't allowed here (" << getName() << ")" << std::endl;
+		if (!getEP())
+			std::cout << name << " cannot repair itself, no EP left." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << name << " repairs itself and gain " << amount << " HP." << std::endl;
 	this->HP += amount;
+	this->EP--;
 }
 
 void	ClapTrap::setName(std::string data) {

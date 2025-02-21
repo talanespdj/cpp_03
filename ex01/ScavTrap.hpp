@@ -15,12 +15,13 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap 
-{
+class	ScavTrap : public ClapTrap {
 	public:
-		ScavTrap(std::string init);
+		ScavTrap();
 		~ScavTrap();
+		ScavTrap(std::string init);
 		ScavTrap(const ScavTrap& f);
+		ScavTrap& operator=(const ScavTrap& f);
 
 		void	attack(const std::string& target);
 		void	guardGate();

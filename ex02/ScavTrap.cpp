@@ -14,6 +14,10 @@
 #include <iostream>
 
 ScavTrap::ScavTrap() {
+	this->setName("Anonymous");
+	this->setHP(100);
+	this->setEP(50);
+	this->setAD(20);
 	std::cout << "An anonymous Scavtrap was made, welcome" << std::endl;
 };
 
